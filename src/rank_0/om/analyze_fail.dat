@@ -1,0 +1,382 @@
+# [No.1] construct_wrapper.1
+# In file /home/car/work/course/application_example/CAR/src/utils/metric.py(203)/    def construct(self, image):/
+funcgraph fg_1(
+        %para1 : Tensor(F32)[1, 3, -1, -1]    # image
+        , %para2 : Ref[Tensor(F32)][3]    # net2.add_mean.bias
+        , %para3 : Ref[Tensor(F32)][3, 3, 1, 1]    # net2.add_mean.weight
+        , %para4 : Ref[Tensor(F32)][3]    # net2.sub_mean.bias
+        , %para5 : Ref[Tensor(F32)][3, 3, 1, 1]    # net2.sub_mean.weight
+        , %para6 : Ref[Tensor(F32)][3]    # net2.tail.1.bias
+        , %para7 : Ref[Tensor(F32)][3, 256, 3, 3]    # net2.tail.1.weight
+        , %para8 : Ref[Tensor(F32)][3]    # net1.sub_mean.bias
+        , %para9 : Ref[Tensor(F32)][3, 3, 1, 1]    # net1.sub_mean.weight
+        , %para10 : Ref[Tensor(F32)][256]    # net2.body.32.bias
+        , %para11 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.32.weight
+        , %para12 : Ref[Tensor(F32)][256]    # net2.head.0.bias
+        , %para13 : Ref[Tensor(F32)][256, 3, 3, 3]    # net2.head.0.weight
+        , %para14 : Ref[Tensor(F32)][256]    # net1.offsets_h_generation.1.bias
+        , %para15 : Ref[Tensor(F32)][256, 256, 3, 3]    # net1.offsets_h_generation.1.weight
+        , %para16 : Ref[Tensor(F32)][49]    # net1.offsets_h_generation.4.bias
+        , %para17 : Ref[Tensor(F32)][49, 256, 3, 3]    # net1.offsets_h_generation.4.weight
+        , %para18 : Ref[Tensor(F32)][256]    # net1.offsets_v_generation.1.bias
+        , %para19 : Ref[Tensor(F32)][256, 256, 3, 3]    # net1.offsets_v_generation.1.weight
+        , %para20 : Ref[Tensor(F32)][49]    # net1.offsets_v_generation.4.bias
+        , %para21 : Ref[Tensor(F32)][49, 256, 3, 3]    # net1.offsets_v_generation.4.weight
+        , %para22 : Ref[Tensor(F32)][256]    # net1.offsets_trunk.1.bias
+        , %para23 : Ref[Tensor(F32)][256, 256, 3, 3]    # net1.offsets_trunk.1.weight
+        , %para24 : Ref[Tensor(F32)][256]    # net1.offsets_trunk.4.bias
+        , %para25 : Ref[Tensor(F32)][256, 256, 3, 3]    # net1.offsets_trunk.4.weight
+        , %para26 : Ref[Tensor(F32)][256]    # net1.offsets_trunk.7.bias
+        , %para27 : Ref[Tensor(F32)][256, 256, 3, 3]    # net1.offsets_trunk.7.weight
+        , %para28 : Ref[Tensor(F32)][256]    # net1.offsets_trunk.11.bias
+        , %para29 : Ref[Tensor(F32)][256, 256, 3, 3]    # net1.offsets_trunk.11.weight
+        , %para30 : Ref[Tensor(F32)][256]    # net1.kernels_weight.1.bias
+        , %para31 : Ref[Tensor(F32)][256, 256, 3, 3]    # net1.kernels_weight.1.weight
+        , %para32 : Ref[Tensor(F32)][49]    # net1.kernels_weight.4.bias
+        , %para33 : Ref[Tensor(F32)][49, 256, 3, 3]    # net1.kernels_weight.4.weight
+        , %para34 : Ref[Tensor(F32)][256]    # net1.kernels_trunk.1.bias
+        , %para35 : Ref[Tensor(F32)][256, 256, 3, 3]    # net1.kernels_trunk.1.weight
+        , %para36 : Ref[Tensor(F32)][256]    # net1.kernels_trunk.4.bias
+        , %para37 : Ref[Tensor(F32)][256, 256, 3, 3]    # net1.kernels_trunk.4.weight
+        , %para38 : Ref[Tensor(F32)][256]    # net1.kernels_trunk.7.bias
+        , %para39 : Ref[Tensor(F32)][256, 256, 3, 3]    # net1.kernels_trunk.7.weight
+        , %para40 : Ref[Tensor(F32)][256]    # net1.kernels_trunk.11.bias
+        , %para41 : Ref[Tensor(F32)][256, 256, 3, 3]    # net1.kernels_trunk.11.weight
+        , %para42 : Ref[Tensor(F32)][256]    # net1.ds_8.downsample.1.bias
+        , %para43 : Ref[Tensor(F32)][256, 512, 1, 1]    # net1.ds_8.downsample.1.weight
+        , %para44 : Ref[Tensor(F32)][1024]    # net2.tail.0.0.bias
+        , %para45 : Ref[Tensor(F32)][1024, 256, 3, 3]    # net2.tail.0.0.weight
+        , %para46 : Ref[Tensor(F32)][128]    # net1.ds_4.downsample.1.bias
+        , %para47 : Ref[Tensor(F32)][128, 512, 1, 1]    # net1.ds_4.downsample.1.weight
+        , %para48 : Ref[Tensor(F32)][64]    # net1.ds_1.1.bias
+        , %para49 : Ref[Tensor(F32)][64, 3, 5, 5]    # net1.ds_1.1.weight
+        , %para50 : Ref[Tensor(F32)][128]    # net1.ds_2.downsample.1.bias
+        , %para51 : Ref[Tensor(F32)][128, 256, 1, 1]    # net1.ds_2.downsample.1.weight
+        , %para52 : Ref[Tensor(F32)][4096]    # net1.offsets_trunk.9.upsample.0.bias
+        , %para53 : Ref[Tensor(F32)][4096, 256, 1, 1]    # net1.offsets_trunk.9.upsample.0.weight
+        , %para54 : Ref[Tensor(F32)][256]    # net2.body.0.body.0.bias
+        , %para55 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.0.body.0.weight
+        , %para56 : Ref[Tensor(F32)][256]    # net2.body.0.body.2.bias
+        , %para57 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.0.body.2.weight
+        , %para58 : Ref[Tensor(F32)][256]    # net2.body.1.body.0.bias
+        , %para59 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.1.body.0.weight
+        , %para60 : Ref[Tensor(F32)][256]    # net2.body.1.body.2.bias
+        , %para61 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.1.body.2.weight
+        , %para62 : Ref[Tensor(F32)][256]    # net2.body.2.body.0.bias
+        , %para63 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.2.body.0.weight
+        , %para64 : Ref[Tensor(F32)][256]    # net2.body.2.body.2.bias
+        , %para65 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.2.body.2.weight
+        , %para66 : Ref[Tensor(F32)][256]    # net2.body.3.body.0.bias
+        , %para67 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.3.body.0.weight
+        , %para68 : Ref[Tensor(F32)][256]    # net2.body.3.body.2.bias
+        , %para69 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.3.body.2.weight
+        , %para70 : Ref[Tensor(F32)][256]    # net2.body.4.body.0.bias
+        , %para71 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.4.body.0.weight
+        , %para72 : Ref[Tensor(F32)][256]    # net2.body.4.body.2.bias
+        , %para73 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.4.body.2.weight
+        , %para74 : Ref[Tensor(F32)][256]    # net2.body.5.body.0.bias
+        , %para75 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.5.body.0.weight
+        , %para76 : Ref[Tensor(F32)][256]    # net2.body.5.body.2.bias
+        , %para77 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.5.body.2.weight
+        , %para78 : Ref[Tensor(F32)][256]    # net2.body.6.body.0.bias
+        , %para79 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.6.body.0.weight
+        , %para80 : Ref[Tensor(F32)][256]    # net2.body.6.body.2.bias
+        , %para81 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.6.body.2.weight
+        , %para82 : Ref[Tensor(F32)][256]    # net2.body.7.body.0.bias
+        , %para83 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.7.body.0.weight
+        , %para84 : Ref[Tensor(F32)][256]    # net2.body.7.body.2.bias
+        , %para85 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.7.body.2.weight
+        , %para86 : Ref[Tensor(F32)][256]    # net2.body.8.body.0.bias
+        , %para87 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.8.body.0.weight
+        , %para88 : Ref[Tensor(F32)][256]    # net2.body.8.body.2.bias
+        , %para89 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.8.body.2.weight
+        , %para90 : Ref[Tensor(F32)][256]    # net2.body.9.body.0.bias
+        , %para91 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.9.body.0.weight
+        , %para92 : Ref[Tensor(F32)][256]    # net2.body.9.body.2.bias
+        , %para93 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.9.body.2.weight
+        , %para94 : Ref[Tensor(F32)][256]    # net2.body.10.body.0.bias
+        , %para95 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.10.body.0.weight
+        , %para96 : Ref[Tensor(F32)][256]    # net2.body.10.body.2.bias
+        , %para97 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.10.body.2.weight
+        , %para98 : Ref[Tensor(F32)][256]    # net2.body.11.body.0.bias
+        , %para99 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.11.body.0.weight
+        , %para100 : Ref[Tensor(F32)][256]    # net2.body.11.body.2.bias
+        , %para101 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.11.body.2.weight
+        , %para102 : Ref[Tensor(F32)][256]    # net2.body.12.body.0.bias
+        , %para103 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.12.body.0.weight
+        , %para104 : Ref[Tensor(F32)][256]    # net2.body.12.body.2.bias
+        , %para105 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.12.body.2.weight
+        , %para106 : Ref[Tensor(F32)][256]    # net2.body.13.body.0.bias
+        , %para107 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.13.body.0.weight
+        , %para108 : Ref[Tensor(F32)][256]    # net2.body.13.body.2.bias
+        , %para109 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.13.body.2.weight
+        , %para110 : Ref[Tensor(F32)][256]    # net2.body.14.body.0.bias
+        , %para111 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.14.body.0.weight
+        , %para112 : Ref[Tensor(F32)][256]    # net2.body.14.body.2.bias
+        , %para113 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.14.body.2.weight
+        , %para114 : Ref[Tensor(F32)][256]    # net2.body.15.body.0.bias
+        , %para115 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.15.body.0.weight
+        , %para116 : Ref[Tensor(F32)][256]    # net2.body.15.body.2.bias
+        , %para117 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.15.body.2.weight
+        , %para118 : Ref[Tensor(F32)][256]    # net2.body.16.body.0.bias
+        , %para119 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.16.body.0.weight
+        , %para120 : Ref[Tensor(F32)][256]    # net2.body.16.body.2.bias
+        , %para121 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.16.body.2.weight
+        , %para122 : Ref[Tensor(F32)][256]    # net2.body.17.body.0.bias
+        , %para123 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.17.body.0.weight
+        , %para124 : Ref[Tensor(F32)][256]    # net2.body.17.body.2.bias
+        , %para125 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.17.body.2.weight
+        , %para126 : Ref[Tensor(F32)][256]    # net2.body.18.body.0.bias
+        , %para127 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.18.body.0.weight
+        , %para128 : Ref[Tensor(F32)][256]    # net2.body.18.body.2.bias
+        , %para129 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.18.body.2.weight
+        , %para130 : Ref[Tensor(F32)][256]    # net2.body.19.body.0.bias
+        , %para131 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.19.body.0.weight
+        , %para132 : Ref[Tensor(F32)][256]    # net2.body.19.body.2.bias
+        , %para133 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.19.body.2.weight
+        , %para134 : Ref[Tensor(F32)][256]    # net2.body.20.body.0.bias
+        , %para135 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.20.body.0.weight
+        , %para136 : Ref[Tensor(F32)][256]    # net2.body.20.body.2.bias
+        , %para137 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.20.body.2.weight
+        , %para138 : Ref[Tensor(F32)][256]    # net2.body.21.body.0.bias
+        , %para139 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.21.body.0.weight
+        , %para140 : Ref[Tensor(F32)][256]    # net2.body.21.body.2.bias
+        , %para141 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.21.body.2.weight
+        , %para142 : Ref[Tensor(F32)][256]    # net2.body.22.body.0.bias
+        , %para143 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.22.body.0.weight
+        , %para144 : Ref[Tensor(F32)][256]    # net2.body.22.body.2.bias
+        , %para145 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.22.body.2.weight
+        , %para146 : Ref[Tensor(F32)][256]    # net2.body.23.body.0.bias
+        , %para147 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.23.body.0.weight
+        , %para148 : Ref[Tensor(F32)][256]    # net2.body.23.body.2.bias
+        , %para149 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.23.body.2.weight
+        , %para150 : Ref[Tensor(F32)][256]    # net2.body.24.body.0.bias
+        , %para151 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.24.body.0.weight
+        , %para152 : Ref[Tensor(F32)][256]    # net2.body.24.body.2.bias
+        , %para153 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.24.body.2.weight
+        , %para154 : Ref[Tensor(F32)][256]    # net2.body.25.body.0.bias
+        , %para155 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.25.body.0.weight
+        , %para156 : Ref[Tensor(F32)][256]    # net2.body.25.body.2.bias
+        , %para157 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.25.body.2.weight
+        , %para158 : Ref[Tensor(F32)][256]    # net2.body.26.body.0.bias
+        , %para159 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.26.body.0.weight
+        , %para160 : Ref[Tensor(F32)][256]    # net2.body.26.body.2.bias
+        , %para161 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.26.body.2.weight
+        , %para162 : Ref[Tensor(F32)][256]    # net2.body.27.body.0.bias
+        , %para163 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.27.body.0.weight
+        , %para164 : Ref[Tensor(F32)][256]    # net2.body.27.body.2.bias
+        , %para165 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.27.body.2.weight
+        , %para166 : Ref[Tensor(F32)][256]    # net2.body.28.body.0.bias
+        , %para167 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.28.body.0.weight
+        , %para168 : Ref[Tensor(F32)][256]    # net2.body.28.body.2.bias
+        , %para169 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.28.body.2.weight
+        , %para170 : Ref[Tensor(F32)][256]    # net2.body.29.body.0.bias
+        , %para171 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.29.body.0.weight
+        , %para172 : Ref[Tensor(F32)][256]    # net2.body.29.body.2.bias
+        , %para173 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.29.body.2.weight
+        , %para174 : Ref[Tensor(F32)][256]    # net2.body.30.body.0.bias
+        , %para175 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.30.body.0.weight
+        , %para176 : Ref[Tensor(F32)][256]    # net2.body.30.body.2.bias
+        , %para177 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.30.body.2.weight
+        , %para178 : Ref[Tensor(F32)][256]    # net2.body.31.body.0.bias
+        , %para179 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.31.body.0.weight
+        , %para180 : Ref[Tensor(F32)][256]    # net2.body.31.body.2.bias
+        , %para181 : Ref[Tensor(F32)][256, 256, 3, 3]    # net2.body.31.body.2.weight
+        , %para182 : Ref[Tensor(F32)][4096]    # net1.kernels_trunk.9.upsample.0.bias
+        , %para183 : Ref[Tensor(F32)][4096, 256, 1, 1]    # net1.kernels_trunk.9.upsample.0.weight
+        , %para184 : Ref[Tensor(F32)][128]    # net1.res_4.0.transform.1.bias
+        , %para185 : Ref[Tensor(F32)][128, 128, 3, 3]    # net1.res_4.0.transform.1.weight
+        , %para186 : Ref[Tensor(F32)][128]    # net1.res_4.0.transform.4.bias
+        , %para187 : Ref[Tensor(F32)][128, 128, 3, 3]    # net1.res_4.0.transform.4.weight
+        , %para188 : Ref[Tensor(F32)][128]    # net1.res_4.1.transform.1.bias
+        , %para189 : Ref[Tensor(F32)][128, 128, 3, 3]    # net1.res_4.1.transform.1.weight
+        , %para190 : Ref[Tensor(F32)][128]    # net1.res_4.1.transform.4.bias
+        , %para191 : Ref[Tensor(F32)][128, 128, 3, 3]    # net1.res_4.1.transform.4.weight
+        , %para192 : Ref[Tensor(F32)][128]    # net1.res_4.2.transform.1.bias
+        , %para193 : Ref[Tensor(F32)][128, 128, 3, 3]    # net1.res_4.2.transform.1.weight
+        , %para194 : Ref[Tensor(F32)][128]    # net1.res_4.2.transform.4.bias
+        , %para195 : Ref[Tensor(F32)][128, 128, 3, 3]    # net1.res_4.2.transform.4.weight
+        , %para196 : Ref[Tensor(F32)][128]    # net1.res_4.3.transform.1.bias
+        , %para197 : Ref[Tensor(F32)][128, 128, 3, 3]    # net1.res_4.3.transform.1.weight
+        , %para198 : Ref[Tensor(F32)][128]    # net1.res_4.3.transform.4.bias
+        , %para199 : Ref[Tensor(F32)][128, 128, 3, 3]    # net1.res_4.3.transform.4.weight
+        , %para200 : Ref[Tensor(F32)][128]    # net1.res_4.4.transform.1.bias
+        , %para201 : Ref[Tensor(F32)][128, 128, 3, 3]    # net1.res_4.4.transform.1.weight
+        , %para202 : Ref[Tensor(F32)][128]    # net1.res_4.4.transform.4.bias
+        , %para203 : Ref[Tensor(F32)][128, 128, 3, 3]    # net1.res_4.4.transform.4.weight
+    ) {
+
+#------------------------> 0
+    %1 = FuncGraph::fg_2(%para1)    #(Tensor(F32)[1, 3, -1, -1])    # fg_2=construct.2 #scope: Default
+#[CNode]7
+    Primitive::Return{prim_type=1}(%1)    #(Undefined) #scope: Default
+      # In file /home/car/work/course/application_example/CAR/src/utils/metric.py(209)/        return downscaled_img, reconstructed_img/#[CNode]8
+}
+# order:
+#   1: construct_wrapper.1:[CNode]7{[0]: ValueNode<FuncGraph> construct.2, [1]: image}
+#   2: construct_wrapper.1:[CNode]8{[0]: ValueNode<Primitive> Return, [1]: [CNode]7}
+
+
+# [No.2] construct.2
+# In file /home/car/work/course/application_example/CAR/src/utils/metric.py(203)/    def construct(self, image):/
+funcgraph fg_2[fg_1](
+        %para204 : Tensor(F32)[1, 3, -1, -1]    # image
+    ) {
+
+#------------------------> 1
+    %1 = FuncGraph::fg_3(%para204)    #(Tensor(F32)[1, 3, -1, -1])    # fg_3=construct.3 #scope: Default
+      # In file /home/car/work/course/application_example/CAR/src/utils/metric.py(204)/        kernels, offsets_h, offsets_v = self.net1(image)/#[CNode]9
+    %2 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%1, I64(0))    #(Undefined, Undefined) #scope: Default
+      # In file /home/car/work/course/application_example/CAR/src/utils/metric.py(204)/        kernels, offsets_h, offsets_v = self.net1(image)/#kernels
+    %3 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%1, I64(1))    #(Undefined, Undefined) #scope: Default
+      # In file /home/car/work/course/application_example/CAR/src/utils/metric.py(204)/        kernels, offsets_h, offsets_v = self.net1(image)/#offsets_h
+    %4 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%1, I64(2))    #(Undefined, Undefined) #scope: Default
+      # In file /home/car/work/course/application_example/CAR/src/utils/metric.py(204)/        kernels, offsets_h, offsets_v = self.net1(image)/#offsets_v
+    %5 = FuncGraph::fg_10(%para204, %2, %3, %4, I64(2))    #(Tensor(F32)[1, 3, -1, -1], Undefined, Undefined, Undefined, Undefined)    # fg_10=construct.10 #scope: Default
+      # In file /home/car/work/course/application_example/CAR/src/utils/metric.py(205)/        downscaled_img = self.dsn(image, kernels, offsets_h, offsets_v, self.offset_unit)/#downscaled_img
+    %6 = FuncGraph::fg_11(%5)    #(Undefined)    # fg_11=construct.11 #scope: Default
+      # In file /home/car/work/course/application_example/CAR/src/utils/metric.py(206)/        downscaled_img = self.quant(downscaled_img)/#downscaled_img
+    %7 = FuncGraph::fg_12(%6)    #(Undefined)    # fg_12=construct.12 #scope: Default
+      # In file /home/car/work/course/application_example/CAR/src/utils/metric.py(207)/        reconstructed_img = self.net2(downscaled_img)/#reconstructed_img
+    %8 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%6, %7)    #(Undefined, Undefined) #scope: Default
+      # In file /home/car/work/course/application_example/CAR/src/utils/metric.py(209)/        return downscaled_img, reconstructed_img/#[CNode]13
+    Primitive::Return{prim_type=1}(%8)    #(Undefined) #scope: Default
+      # In file /home/car/work/course/application_example/CAR/src/utils/metric.py(209)/        return downscaled_img, reconstructed_img/#[CNode]14
+}
+# order:
+#   1: construct.2:[CNode]9{[0]: ValueNode<FuncGraph> construct.3, [1]: image}
+#   2: construct.2:kernels{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]9, [2]: ValueNode<Int64Imm> 0}
+#   3: construct.2:offsets_h{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]9, [2]: ValueNode<Int64Imm> 1}
+#   4: construct.2:offsets_v{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]9, [2]: ValueNode<Int64Imm> 2}
+#   5: construct.2:downscaled_img{[0]: ValueNode<FuncGraph> construct.10, [1]: image, [2]: kernels, [3]: offsets_h, [4]: offsets_v, [5]: ValueNode<Int64Imm> 2}
+#   6: construct.2:downscaled_img{[0]: ValueNode<FuncGraph> construct.11, [1]: downscaled_img}
+#   7: construct.2:reconstructed_img{[0]: ValueNode<FuncGraph> construct.12, [1]: downscaled_img}
+#   8: construct.2:[CNode]13{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: downscaled_img, [2]: reconstructed_img}
+#   9: construct.2:[CNode]14{[0]: ValueNode<Primitive> Return, [1]: [CNode]13}
+
+
+# [No.3] construct.3
+# In file /home/car/work/course/application_example/CAR/src/model/downsampler.py(122)/    def construct(self, img):/
+funcgraph fg_3[fg_1](
+        %para205 : Tensor(F32)[1, 3, -1, -1]    # img
+    ) {
+
+#------------------------> 2
+    %1 = FuncGraph::fg_4(%para205)    #(Tensor(F32)[1, 3, -1, -1])    # fg_4=construct.4 #scope: Default/net1-DSN
+      # In file /home/car/work/course/application_example/CAR/src/model/downsampler.py(125)/        x = self.sub_mean(img)/#x
+    %2 = FuncGraph::fg_15(%1)    #(Undefined)    # fg_15=construct.15 #scope: Default/net1-DSN
+      # In file /home/car/work/course/application_example/CAR/src/model/downsampler.py(127)/        x = self.ds_1(x)/#x
+    %3 = FuncGraph::fg_16(%2)    #(Undefined)    # fg_16=construct.16 #scope: Default/net1-DSN
+      # In file /home/car/work/course/application_example/CAR/src/model/downsampler.py(128)/        x = self.ds_2(x)/#x
+    %4 = FuncGraph::fg_17(%3)    #(Undefined)    # fg_17=construct.17 #scope: Default/net1-DSN
+      # In file /home/car/work/course/application_example/CAR/src/model/downsampler.py(129)/        x = self.ds_4(x)/#x
+    %5 = FuncGraph::fg_18(%4)    #(Undefined)    # fg_18=construct.18 #scope: Default/net1-DSN
+      # In file /home/car/work/course/application_example/CAR/src/model/downsampler.py(130)/        x = x + self.res_4(x)/#[CNode]19
+    %6 = DoSignaturePrimitive::S-Prim-add{prim_type=1}(%4, %5)    #(Undefined, Undefined) #scope: Default/net1-DSN
+      # In file /home/car/work/course/application_example/CAR/src/model/downsampler.py(130)/        x = x + self.res_4(x)/#x
+    %7 = FuncGraph::fg_20(%6)    #(Undefined)    # fg_20=construct.20 #scope: Default/net1-DSN
+      # In file /home/car/work/course/application_example/CAR/src/model/downsampler.py(131)/        x = self.ds_8(x)/#x
+    %8 = FuncGraph::fg_21(%7)    #(Undefined)    # fg_21=construct.21 #scope: Default/net1-DSN
+      # In file /home/car/work/course/application_example/CAR/src/model/downsampler.py(133)/        kt = self.kernels_trunk(x)/#kt
+    %9 = FuncGraph::fg_22(%8)    #(Undefined)    # fg_22=construct.22 #scope: Default/net1-DSN
+      # In file /home/car/work/course/application_example/CAR/src/model/downsampler.py(135)/        kt = self.kernels_weight(kt)/#kt
+    %10 = FuncGraph::fg_23(%9, F32(1e-06), I64(1))    #(Undefined, Undefined, Undefined)    # fg_23=clip_by_value.23 #scope: Default/net1-DSN
+      # In file /home/car/work/course/application_example/CAR/src/model/downsampler.py(136)/        k_weight = ops.clip_by_value(kt, 1e-6, 1)/#k_weight
+    %11 = FuncGraph::fg_24(%10)    #(Undefined)    # fg_24=construct.24 #scope: Default/net1-DSN
+      # In file /home/car/work/course/application_example/CAR/src/model/downsampler.py(137)/        kernels = self.normalize(k_weight)/#kernels
+    %12 = FuncGraph::fg_25(%7)    #(Undefined)    # fg_25=construct.25 #scope: Default/net1-DSN
+      # In file /home/car/work/course/application_example/CAR/src/model/downsampler.py(139)/        ot = self.offsets_trunk(x)/#ot
+    %13 = FuncGraph::fg_26(%12)    #(Undefined)    # fg_26=construct.26 #scope: Default/net1-DSN
+      # In file /home/car/work/course/application_example/CAR/src/model/downsampler.py(140)/        offsets_h = self.offsets_h_generation(ot)/#offsets_h
+    %14 = FuncGraph::fg_27(%12)    #(Undefined)    # fg_27=construct.27 #scope: Default/net1-DSN
+      # In file /home/car/work/course/application_example/CAR/src/model/downsampler.py(141)/        offsets_v = self.offsets_v_generation(ot)/#offsets_v
+    %15 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%11, %13, %14)    #(Undefined, Undefined, Undefined) #scope: Default/net1-DSN
+      # In file /home/car/work/course/application_example/CAR/src/model/downsampler.py(143)/        return kernels, offsets_h, offsets_v/#[CNode]28
+    Primitive::Return{prim_type=1}(%15)    #(Undefined) #scope: Default/net1-DSN
+      # In file /home/car/work/course/application_example/CAR/src/model/downsampler.py(143)/        return kernels, offsets_h, offsets_v/#[CNode]29
+}
+# order:
+#   1: construct.3:x{[0]: ValueNode<FuncGraph> construct.4, [1]: img}
+#   2: construct.3:x{[0]: ValueNode<FuncGraph> construct.15, [1]: x}
+#   3: construct.3:x{[0]: ValueNode<FuncGraph> construct.16, [1]: x}
+#   4: construct.3:x{[0]: ValueNode<FuncGraph> construct.17, [1]: x}
+#   5: construct.3:[CNode]19{[0]: ValueNode<FuncGraph> construct.18, [1]: x}
+#   6: construct.3:x{[0]: ValueNode<DoSignaturePrimitive> S-Prim-add, [1]: x, [2]: [CNode]19}
+#   7: construct.3:x{[0]: ValueNode<FuncGraph> construct.20, [1]: x}
+#   8: construct.3:kt{[0]: ValueNode<FuncGraph> construct.21, [1]: x}
+#   9: construct.3:kt{[0]: ValueNode<FuncGraph> construct.22, [1]: kt}
+#  10: construct.3:k_weight{[0]: ValueNode<FuncGraph> clip_by_value.23, [1]: kt, [2]: ValueNode<FP32Imm> 0.000001, [3]: ValueNode<Int64Imm> 1}
+#  11: construct.3:kernels{[0]: ValueNode<FuncGraph> construct.24, [1]: k_weight}
+#  12: construct.3:ot{[0]: ValueNode<FuncGraph> construct.25, [1]: x}
+#  13: construct.3:offsets_h{[0]: ValueNode<FuncGraph> construct.26, [1]: ot}
+#  14: construct.3:offsets_v{[0]: ValueNode<FuncGraph> construct.27, [1]: ot}
+#  15: construct.3:[CNode]28{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: kernels, [2]: offsets_h, [3]: offsets_v}
+#  16: construct.3:[CNode]29{[0]: ValueNode<Primitive> Return, [1]: [CNode]28}
+
+
+# [No.4] construct.4
+# In file /home/car/miniconda3/envs/ms/lib/python3.9/site-packages/mindspore/nn/layer/conv.py(284)/    def construct(self, x):/
+funcgraph fg_4[fg_1](
+        %para206 : Tensor(F32)[1, 3, -1, -1]    # x
+    ) {
+
+#------------------------> 3
+    %1 = FuncGraph::fg_5(%para206, %para8, %para9)    #(Tensor(F32)[1, 3, -1, -1], Ref[Tensor(F32)][3], Ref[Tensor(F32)][3, 3, 1, 1])    # fg_5=L-construct.5 #scope: Default
+#[CNode]30
+    Primitive::Return{prim_type=1}(%1)    #(Undefined) #scope: Default/net1-DSN/sub_mean-MeanShift
+      # In file /home/car/miniconda3/envs/ms/lib/python3.9/site-packages/mindspore/nn/layer/conv.py(286)/        if self.has_bias:/#[CNode]31
+}
+# order:
+#   1: construct.4:[CNode]30{[0]: ValueNode<FuncGraph> L-construct.5, [1]: x, [2]: net1.sub_mean.bias, [3]: net1.sub_mean.weight}
+#   2: construct.4:[CNode]31{[0]: ValueNode<Primitive> Return, [1]: [CNode]30}
+
+
+# [No.5] L-construct.5
+# In file /home/car/miniconda3/envs/ms/lib/python3.9/site-packages/mindspore/nn/layer/conv.py(284)/    def construct(self, x):/
+funcgraph fg_5(
+        %para207 : Tensor(F32)[1, 3, -1, -1]    # x
+        , %para208 : Ref[Tensor(F32)][3]    # L-net2.add_mean.bias
+        , %para209 : Ref[Tensor(F32)][3, 3, 1, 1]    # L-net2.add_mean.weight
+    ) {
+    %1 : Bool = FuncGraph::fg_32(Bool(1))    #(Bool)    # fg_32=L-bool_.32 #scope: Default/net2-EDSR/add_mean-MeanShift
+      # In file /home/car/miniconda3/envs/ms/lib/python3.9/site-packages/mindspore/nn/layer/conv.py(286)/        if self.has_bias:/#33
+    %2 : Func = Primitive::Switch{prim_type=1}(%1, FuncGraph::fg_6, FuncGraph::fg_34)    #(Bool, Func, Func)    # fg_6=L-✓construct.6, fg_34=L-✗construct.34 #scope: Default/net2-EDSR/add_mean-MeanShift
+      # In file /home/car/miniconda3/envs/ms/lib/python3.9/site-packages/mindspore/nn/layer/conv.py(286)/        if self.has_bias:/#35
+
+#------------------------> 4
+    %3 = %2() #scope: Default/net2-EDSR/add_mean-MeanShift
+      # In file /home/car/miniconda3/envs/ms/lib/python3.9/site-packages/mindspore/nn/layer/conv.py(286)/        if self.has_bias:/#36
+    Primitive::Return{prim_type=1}(%3)    #(Undefined) #scope: Default/net2-EDSR/add_mean-MeanShift
+      # In file /home/car/miniconda3/envs/ms/lib/python3.9/site-packages/mindspore/nn/layer/conv.py(286)/        if self.has_bias:/#[CNode]37
+}
+# order:
+#   1: L-construct.5:output{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Conv2D, [1]: x, [2]: L-net2.add_mean.weight}
+#   2: L-construct.5:33{[0]: ValueNode<FuncGraph> L-bool_.32, [1]: ValueNode<BoolImm> true}
+#   3: L-construct.5:35{[0]: ValueNode<Primitive> Switch, [1]: 33, [2]: ValueNode<FuncGraph> L-✓construct.6, [3]: ValueNode<FuncGraph> L-✗construct.34}
+#   4: L-construct.5:36{[0]: 35}
+#   5: L-construct.5:[CNode]37{[0]: ValueNode<Primitive> Return, [1]: 36}
+
+
+# [No.6] L-✓construct.6
+# In file /home/car/miniconda3/envs/ms/lib/python3.9/site-packages/mindspore/nn/layer/conv.py(286)/        if self.has_bias:/
+funcgraph fg_6[fg_5](
+) {
+
+#------------------------> 5
+    %1 = $(L-construct.5):DoSignaturePrimitive::S-Prim-Conv2D{prim_type=1}[kernel_size=(I64(1), I64(1)), stride=(I64(1), I64(1), I64(1), I64(1)), mode=I64(1), out_channel=I64(3), group=I64(1), input_names=["x", "w"], pad=(I64(0), I64(0), I64(0), I64(0)), dilation=(I64(1), I64(1), I64(1), I64(1)), pad_mode=I64(1), output_names=["output"], format="NCHW", groups=I64(1)](%para207, %para209)    #(Tensor(F32)[1, 3, -1, -1], Ref[Tensor(F32)][3, 3, 1, 1]) #scope: Default/net2-EDSR/add_mean-MeanShift
+      # In file /home/car/miniconda3/envs/ms/lib/python3.9/site-packages/mindspore/nn/layer/conv.py(285)/        output = self.conv2d(x, self.weight)/#output
+    %2 = DoSignaturePrimitive::S-Prim-BiasAdd{prim_type=1}[output_names=["output"], format="NCHW", input_names=["x", "b"]](%1, %para208)    #(Undefined, Ref[Tensor(F32)][3]) #scope: Default/net2-EDSR/add_mean-MeanShift
+      # In file /home/car/miniconda3/envs/ms/lib/python3.9/site-packages/mindspore/nn/layer/conv.py(287)/            output = self.bias_add(output, self.bias)/#output
+    %3 = FuncGraph::fg_38(%2)    #(Undefined)    # fg_38=L-↓construct.38 #scope: Default/net2-EDSR/add_mean-MeanShift
+      # In file /home/car/miniconda3/envs/ms/lib/python3.9/site-packages/mindspore/nn/layer/conv.py(286)/        if self.has_bias:/#39
+    Primitive::Return{prim_type=1}(%3)    #(Undefined) #scope: Default/net2-EDSR/add_mean-MeanShift
+      # In file /home/car/miniconda3/envs/ms/lib/python3.9/site-packages/mindspore/nn/layer/conv.py(286)/        if self.has_bias:/#40
+}
+# order:
+#   1: L-✓construct.6:output{[0]: ValueNode<DoSignaturePrimitive> S-Prim-BiasAdd, [1]: output, [2]: L-net2.add_mean.bias}
+#   2: L-✓construct.6:39{[0]: ValueNode<FuncGraph> L-↓construct.38, [1]: output}
+#   3: L-✓construct.6:40{[0]: ValueNode<Primitive> Return, [1]: 39}
+
+
+#===============================================================================
+# num of function graphs in stack: 6/7 (Ignored 1 internal frames).
